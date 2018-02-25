@@ -259,12 +259,13 @@ client.on("message", async message => {
 
    talkedRecently2.delete(message.author.id);
    message.channel.send(":no_mouth:  |  Whoa there, cowboy. Slow down! You can type again in 2.5 seconds.");
-   message.author.addRole(member.guild.roles.find("name", "★ Muted ★"))
+   message.author.addRole(member.guild.roles.find("name", "★ Muted ★"));
    return;
 
  } else {
 
    // Add the member to the set so that they can't talk for 2.5 seconds.
+   message.author.removeRole(member.guild.roles.find("name", "★ Muted ★"));
    talkedRecently.add(message.author.id); setTimeout(() => { 
    talkedRecently.delete(message.author.id); }, 2500);
 
