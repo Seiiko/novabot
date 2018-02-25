@@ -263,11 +263,11 @@ client.on("message", async message => {
 
    function callback(){
     return function(){
-      message.guild.roles.find("name", "★ Muted ★");
+      message.member.removeRole(message.guild.roles.find("name", "★ Muted ★"));
       }
    }
 
-   setTimeout(message.member.removeRole(callback(), 5000));
+   setTimeout(callback(), 5000);
    return;
 
  } else {
