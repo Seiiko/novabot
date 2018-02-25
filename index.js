@@ -240,12 +240,12 @@ client.on("message", async message => {
  if (talkedRecently.has(message.author.id)) {
 
    talkedRecently1.add(message.author.id); setTimeout(() => { 
-   talkedRecently1.delete(message.author.id); }, 2500);
+   talkedRecently1.delete(message.author.id); }, 10000);
 
  } else if (talkedRecently1.has(message.author.id)) {
 
    talkedRecently2.add(message.author.id); setTimeout(() => { 
-   talkedRecently2.delete(message.author.id); }, 2500);
+   talkedRecently2.delete(message.author.id); }, 10000);
 
  } else if (talkedRecently2.has(message.author.id)) {
 
@@ -260,7 +260,7 @@ client.on("message", async message => {
 
    // Add the member to the set so that they can't talk for 2.5 seconds.
    talkedRecently.add(message.author.id); setTimeout(() => { 
-   talkedRecently.delete(message.author.id); }, 2500);
+   talkedRecently.delete(message.author.id); }, 10000);
 
  }
 
