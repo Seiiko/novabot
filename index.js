@@ -132,6 +132,29 @@ fs.readdir("./cmd/nsfw", (err, files) => {
 
 });
 
+// READ THE INTERACTION COMMANDS FOLDER
+fs.readdir("./cmd/interaction", (err, files) => {
+  if(err) console.error(err);
+
+  // Filter .js files.
+  let jsFiles = files.filter( f => f.split(".").pop() === "js");
+  if(jsFiles.length <= 0) {
+    console.log("No commands to load.");
+    return;
+  }
+
+  // Load the commands
+  console.log(`Loading ${jsFiles.length} interaction commands.`);
+  jsFiles.forEach((f, i) => {
+
+    let props = require(`./cmd/interaction/${f}`);
+    console.log(`${i + 1}: ${f} loaded.`);
+    client.commands.set(props.info.name, props);
+
+  });
+
+});
+
 // SET BOT STATUS
 client.on('ready', () => { // When the bot is ready.
     client.user.setPresence({ game: { name: 'with your Universe', type: 0 } }); // Set the bot's status.
