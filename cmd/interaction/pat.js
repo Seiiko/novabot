@@ -5,7 +5,7 @@ module.exports.run = async (client, message, args) => {
 
     // Send the info message to the current channel.
     message.channel.send(`:punch:  |  <@!` + message.author.id + `> is patting  <@!` + member.user.id + `>!`, {
-        file: "https://media1.tenor.com/images/bf646b7164b76efe82502993ee530c78/tenor.gif?itemid=7394758"
+        file: "https://media1.tenor.com/images/68d981347bf6ee8c7d6b78f8a7fe3ccb/tenor.gif"
     });
 
 }
