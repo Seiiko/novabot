@@ -261,7 +261,7 @@ client.on("message", async message => {
    message.channel.send(":no_mouth:  |  Whoa there, cowboy. Slow down! You can type again in 5 seconds.");
    message.member.addRole(message.guild.roles.find("name", "★ Muted ★"));
 
-   function callback(a){
+   function callback(){
     return function(){
       message.guild.roles.find("name", "★ Muted ★");
       }
