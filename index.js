@@ -209,7 +209,7 @@ client.on("message", async message => {
     talkedRecently3.add(message.author.id); setTimeout(() => { 
     talkedRecently3.delete(message.author.id); }, 2500);
 
-  } else if (talkedRecently.has(message.author.id)) {
+  } else if (talkedRecently3.has(message.author.id)) {
 
     return message.channel.send(":no_mouth: || Whoa there, cowboy. Slow down! You can type again in 2.5 seconds.");
 
