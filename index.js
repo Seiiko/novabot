@@ -187,13 +187,25 @@ client.on("message", async message => {
    let command = raw[0];
    let args = raw.slice(1);
 
+  // If the member has send a message.
+  if (talkedRecently.has(message.author.id)) 
+  return message.channel.send("Cooldown test!"; 
+  
+
    // Define the command variable.
    let cmd = client.commands.get(command.slice(prefix.length));
 
    // Check if the command exists.
-   if(cmd) cmd.run(client, message, args);
+   if (cmd)
+    cmd.run(client, message, args);
+    // Add the member to the set so that they can't talk for 2.5 seconds.
+    talkedRecently.add(message.author.id); setTimeout(() => { 
+    talkedRecently.delete(message.author.id); }, 2500);
 
 });
+
+// First, this must be at the top level of your code, *NOT* in any event!
+const talkedRecently = new Set(); 
 
 // GET THE BOT'S TOKEN, DON'T CHANGE
 client.login(process.env.BOT_TOKEN);
