@@ -239,6 +239,7 @@ client.on("message", async message => {
  // Spam prevention.
  if (talkedRecently.has(message.author.id)) {
 
+   talkedRecently.delete(message.author.id);
    talkedRecently1.add(message.author.id); setTimeout(() => { 
    talkedRecently1.delete(message.author.id); }, 2500);
 
