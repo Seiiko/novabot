@@ -198,19 +198,16 @@ client.on("message", async message => {
 
     talkedRecently1.add(message.author.id); setTimeout(() => { 
     talkedRecently1.delete(message.author.id); }, 2500);
-    return;
 
   } else if (talkedRecently1.has(message.author.id)) {
 
     talkedRecently2.add(message.author.id); setTimeout(() => { 
     talkedRecently2.delete(message.author.id); }, 2500);
-    return;
 
   } else if (talkedRecently2.has(message.author.id)) {
 
     talkedRecently3.add(message.author.id); setTimeout(() => { 
     talkedRecently3.delete(message.author.id); }, 2500);
-    return;
 
   } else if (talkedRecently.has(message.author.id)) {
 
