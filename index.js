@@ -8,6 +8,12 @@ const fs = require("fs");
 // DEFINE THE PREFIX
 const prefix = ".";
 
+// CREATE THE SPAM COLLECTIONS
+const talkedRecently = new Set();
+const talkedRecently1 = new Set(); 
+const talkedRecently2 = new Set(); 
+const talkedRecently3 = new Set(); 
+
 // SETUP THE COMMANDS COLLECTION
 client.commands = new Discord.Collection();
 
@@ -187,10 +193,36 @@ client.on("message", async message => {
    let command = raw[0];
    let args = raw.slice(1);
 
-  // If the member has send a message.
-  if (talkedRecently.has(message.author.id)) 
-  return message.channel.send("Cooldown test!"); 
-  
+  // Spam prevention.
+  if (talkedRecently.has(message.author.id)) {
+
+    talkedRecently1.add(message.author.id); setTimeout(() => { 
+    talkedRecently1.delete(message.author.id); }, 2500);
+    return;
+
+  } else if (talkedRecently1.has(message.author.id)) {
+
+    talkedRecently2.add(message.author.id); setTimeout(() => { 
+    talkedRecently2.delete(message.author.id); }, 2500);
+    return;
+
+  } else if (talkedRecently2.has(message.author.id)) {
+
+    talkedRecently3.add(message.author.id); setTimeout(() => { 
+    talkedRecently3.delete(message.author.id); }, 2500);
+    return;
+
+  } else if (talkedRecently.has(message.author.id)) {
+
+    return message.channel.send(":no_mouth: || Whoa there, cowboy. Slow down! You can type again in 2.5 seconds.");
+
+  } else {
+
+    // Add the member to the set so that they can't talk for 2.5 seconds.
+    talkedRecently.add(message.author.id); setTimeout(() => { 
+    talkedRecently.delete(message.author.id); }, 2500);
+
+  }  
 
    // Define the command variable.
    let cmd = client.commands.get(command.slice(prefix.length));
@@ -198,14 +230,8 @@ client.on("message", async message => {
    // Check if the command exists.
    if (cmd)
     cmd.run(client, message, args);
-    // Add the member to the set so that they can't talk for 2.5 seconds.
-    talkedRecently.add(message.author.id); setTimeout(() => { 
-    talkedRecently.delete(message.author.id); }, 2500);
 
 });
-
-// First, this must be at the top level of your code, *NOT* in any event!
-const talkedRecently = new Set(); 
 
 // GET THE BOT'S TOKEN, DON'T CHANGE
 client.login(process.env.BOT_TOKEN);
