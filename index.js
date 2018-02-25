@@ -263,7 +263,7 @@ client.on("message", async message => {
 
    function callback(a){
     return function(){
-      message.guild.roles.find("name", "★ Muted ★"));
+      message.guild.roles.find("name", "★ Muted ★");
       }
    }
 
