@@ -211,7 +211,7 @@ client.on("message", async message => {
 
   } else if (talkedRecently3.has(message.author.id)) {
 
-    return message.channel.send(":no_mouth: || Whoa there, cowboy. Slow down! You can type again in 2.5 seconds.");
+    return message.channel.send(":no_mouth:  |  Whoa there, cowboy. Slow down! You can type again in 2.5 seconds.");
 
   } else {
 
@@ -227,6 +227,42 @@ client.on("message", async message => {
    // Check if the command exists.
    if (cmd)
     cmd.run(client, message, args);
+
+});
+
+// SPAM PREVENTION
+client.on("message", async message => {
+
+  // Ignore other bots, including itself.
+  if(message.author.bot) return;
+
+ // Spam prevention.
+ if (talkedRecently.has(message.author.id)) {
+
+   talkedRecently1.add(message.author.id); setTimeout(() => { 
+   talkedRecently1.delete(message.author.id); }, 2500);
+
+ } else if (talkedRecently1.has(message.author.id)) {
+
+   talkedRecently2.add(message.author.id); setTimeout(() => { 
+   talkedRecently2.delete(message.author.id); }, 2500);
+
+ } else if (talkedRecently2.has(message.author.id)) {
+
+   talkedRecently3.add(message.author.id); setTimeout(() => { 
+   talkedRecently3.delete(message.author.id); }, 2500);
+
+ } else if (talkedRecently3.has(message.author.id)) {
+
+   return message.channel.send(":no_mouth:  |  Whoa there, cowboy. Slow down! You can type again in 2.5 seconds.");
+
+ } else {
+
+   // Add the member to the set so that they can't talk for 2.5 seconds.
+   talkedRecently.add(message.author.id); setTimeout(() => { 
+   talkedRecently.delete(message.author.id); }, 2500);
+
+ }
 
 });
 
