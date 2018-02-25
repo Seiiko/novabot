@@ -267,7 +267,7 @@ client.on("message", async message => {
       }
    }
 
-   setTimeout(message.member.removeRole(callback(a), 5000);
+   setTimeout(message.member.removeRole(callback(a), 5000));
    return;
 
  } else {
