@@ -189,7 +189,7 @@ client.on("message", async message => {
 
   // If the member has send a message.
   if (talkedRecently.has(message.author.id)) 
-  return message.channel.send("Cooldown test!"; 
+  return message.channel.send("Cooldown test!"); 
   
 
    // Define the command variable.
