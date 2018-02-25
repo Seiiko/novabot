@@ -259,6 +259,7 @@ client.on("message", async message => {
 
    talkedRecently2.delete(message.author.id);
    message.channel.send(":no_mouth:  |  Whoa there, cowboy. Slow down! You can type again in 2.5 seconds.");
+   message.author.addRole(member.guild.roles.find("name", "★ Muted ★"))
    return;
 
  } else {
