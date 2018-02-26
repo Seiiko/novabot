@@ -4,8 +4,8 @@ module.exports.run = async (client, message, args) => {
     let member = message.mentions.members.first();
 
     // Send the info message to the current channel.
-    message.channel.send(`:hand_splayed:  |  <@!` + message.author.id + `> is patting  <@!` + member.user.id + `>!`, {
-        file: "https://media1.tenor.com/images/68d981347bf6ee8c7d6b78f8a7fe3ccb/tenor.gif"
+    message.channel.send(`:baby:  |  <@!` + message.author.id + `> is cuddling with  <@!` + member.user.id + `>!`, {
+        file: "http://mrwgifs.com/wp-content/uploads/2013/04/Snuggling-Cuddling-Anime-Girls-Gif-.gif"
     });
 
 }
@@ -13,6 +13,6 @@ module.exports.run = async (client, message, args) => {
 module.exports.info = {
 
     // Set the command name.
-    name: "pat"
+    name: "cuddle"
 
 }
