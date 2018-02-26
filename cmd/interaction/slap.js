@@ -5,7 +5,7 @@ module.exports.run = async (client, message, args) => {
 
     // Send the info message to the current channel.
     message.channel.send(`:raised_hand:  | <@!` + member.user.id + `> has been slapped by <@!` + message.author.id + `>! Ouch...`, {
-        file: "https://media1.tenor.com/images/8e74b7dbfadfd639c35cfddf33252bbd/tenor.gif"
+        file: "https://media.giphy.com/media/jLeyZWgtwgr2U/giphy.gif"
     });
 
 }
