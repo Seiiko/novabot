@@ -29,9 +29,11 @@
     "dog-facts": "^1.0.3",
     "fs": "0.0.1-security",
     "motivational-quotes": "^1.1.0",
+    "opusscript": "0.0.6",
     "random-boobs": "^1.1.0",
     "random-butt": "^1.0.0",
     "random-puppy": "^1.1.0",
-    "random-vagina": "^1.0.0"
+    "random-vagina": "^1.0.0",
+    "ytdl-core": "^0.20.2"
   }
 }

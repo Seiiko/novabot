@@ -8,6 +8,9 @@ const fs = require("fs");
 // DEFINE THE PREFIX
 const prefix = ".";
 
+// DEFINE THE NECESSARY VARIABLES
+var servers = {};
+
 // CREATE THE SPAM COLLECTIONS
 const talkedRecently = new Set();
 const talkedRecently1 = new Set(); 
