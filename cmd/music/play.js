@@ -4,7 +4,7 @@ module.exports.run = async (client, message, args) => {
 
     // DEFINE THE VARIABLES
     let voiceChannel = message.member.voiceChannel; // Voice channel variable.
-    let permissions = voiceChannel.permissionsFor(message.client.user); // Permissions variable.
+    let permissions = voiceChannel.permissionsFor(client.user); // Permissions variable.
 
     // CHECK CONDITIONS
     if(!voiceChannel) // Check if the member is connected to a voice channel.
