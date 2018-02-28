@@ -8,9 +8,6 @@ const fs = require("fs");
 // DEFINE THE PREFIX
 const prefix = ".";
 
-// DEFINE THE NECESSARY VARIABLES
-var servers = {};
-
 // CREATE THE SPAM COLLECTIONS
 const talkedRecently = new Set();
 const talkedRecently1 = new Set(); 
@@ -151,6 +148,27 @@ fs.readdir("./cmd/interaction", (err, files) => {
   jsFiles.forEach((f, i) => {
 
     let props = require(`./cmd/interaction/${f}`);
+    console.log(`${i + 1}: ${f} loaded.`);
+    client.commands.set(props.info.name, props);
+
+  });
+
+// READ THE MUSIC COMMANDS FOLDER
+fs.readdir("./cmd/music", (err, files) => {
+  if(err) console.error(err);
+
+  // Filter .js files.
+  let jsFiles = files.filter( f => f.split(".").pop() === "js");
+  if(jsFiles.length <= 0) {
+    console.log("No commands to load.");
+    return;
+  }
+
+  // Load the commands
+  console.log(`Loading ${jsFiles.length} music commands.`);
+  jsFiles.forEach((f, i) => {
+
+    let props = require(`./cmd/music/${f}`);
     console.log(`${i + 1}: ${f} loaded.`);
     client.commands.set(props.info.name, props);
 
