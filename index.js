@@ -153,6 +153,8 @@ fs.readdir("./cmd/interaction", (err, files) => {
 
   });
 
+});
+
 // READ THE MUSIC COMMANDS FOLDER
 fs.readdir("./cmd/music", (err, files) => {
   if(err) console.error(err);
