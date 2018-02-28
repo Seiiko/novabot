@@ -28,6 +28,7 @@
     "discord.js": "^11.3.0",
     "dog-facts": "^1.0.3",
     "ffmpeg": "0.0.4",
+    "ffmpeg-binaries": "^3.2.2-3",
     "fs": "0.0.1-security",
     "motivational-quotes": "^1.1.0",
     "opusscript": "0.0.6",
