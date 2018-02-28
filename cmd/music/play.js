@@ -4,17 +4,10 @@ module.exports.run = async (client, message, args) => {
 
     // DEFINE THE VARIABLES
     let voiceChannel = message.member.voiceChannel; // Voice channel variable.
-    let permissions = voiceChannel.permissionsFor(client.user); // Permissions variable.
 
     // CHECK CONDITIONS
     if(!voiceChannel) // Check if the member is connected to a voice channel.
         return message.channel.send(":sound:  |  You need to be in a Voice Channel to play music!");
-
-    if(!permissions.has("CONNECT")) // Check if the bot has permissions to connect to the voice channel.
-        return message.channel.send(":no_entry_sign:  |  I don't have enough permissions to connect to the Voice Channel!");
-
-    if(!permissions.has("SPEAK")) // Check if the bot has permissions to speak in the selected voice channel.
-        return message.channel.send(":no_entry_sign:  |  I don't have enough permissions to speak in this Voice Channel!");
 
     try {
 
