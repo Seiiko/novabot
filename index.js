@@ -5,6 +5,7 @@ const client = new Discord.Client();
 // SETUP THE DEPENDENCIES
 const fs = require("fs");
 const ytdl = require("ytdl-core");
+const mPlay = require("./cmd/music/play")
 
 // DEFINE THE PREFIX
 const prefix = ".";
@@ -247,8 +248,8 @@ client.on("message", async message => {
    let serverQueue = queue.get(message.guild.id);
    const song = {
 
-    title: songInfo.title,
-    url: songInfo.video_url
+    title: mPlay.songInfo.title,
+    url: mPlay.songInfo.video_url
 
    };
 
