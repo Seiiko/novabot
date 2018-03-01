@@ -61,3 +61,5 @@ module.exports.info = {
     name: "play"
 
 }
+
+module.exports.songInfo = songInfo;
