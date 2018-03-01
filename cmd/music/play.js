@@ -7,7 +7,7 @@ module.exports.run = async (client, message, args) => {
     if(!voiceChannel) // Check if the member is connected to a voice channel.
         return message.channel.send(":sound:  |  You need to be in a Voice Channel to play music!");
 
-    const songInfo = await ytdl.getInfo(args[0]);
+    var songInfo = await ytdl.getInfo(args[0]);
 
     // PLAY THE SONG
     if(!serverQueue) { // Create queue if there's none.
