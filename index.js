@@ -4,6 +4,7 @@ const client = new Discord.Client();
 
 // SETUP THE DEPENDENCIES
 const fs = require("fs");
+const ytdl = require("ytdl-core");
 
 // DEFINE THE PREFIX
 const prefix = ".";
@@ -239,6 +240,18 @@ client.on("message", async message => {
    let command = raw[0];
    let args = raw.slice(1);
 
+   // Define the server queue and the song variables for the music bot.
+   let serverQueue = queue.get(message.guild.id);
+   const song = {
+
+    title: songInfo.title,
+    url: songInfo.video_url
+
+   };
+
+   // Define the VC variable.
+   let voiceChannel = message.member.voiceChannel; // Voice channel variable.
+
    // Define the command variable.
    let cmd = client.commands.get(command.slice(prefix.length));
 
@@ -297,6 +310,35 @@ client.on("message", async message => {
  }
 
 });
+
+// Play function.
+function play(guild, song) {
+
+  const serverQueue = queue.get(guild.id);
+
+  if (!song) {
+
+    serverQueue.voiceChannel.leave();
+    queue.delete(guild.id);
+    return;
+
+  }
+
+  console.log(serverQueue.songs);
+
+  const dispatcher = serverQueue.connection.playStream(ytdl(song.url)) // Player variable.
+        .on("end", () => {
+
+            console.log("Song ended!");
+            serverQueue.songs.shift();
+            play(guild, serverQueue.songs[0]);
+
+        })
+        .on("error", error => console.error(error));
+
+    dispatcher.setVolumeLogarithmic(5 / 5);
+
+}
 
 // GET THE BOT'S TOKEN, DON'T CHANGE
 client.login(process.env.BOT_TOKEN);
