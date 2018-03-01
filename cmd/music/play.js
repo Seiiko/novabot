@@ -20,7 +20,7 @@ module.exports.run = async (client, message, args) => {
 
     }
 
-    const dispatcher = connection.playStream(ytdl(args[1])) // Player variable.
+    const dispatcher = connection.playStream(ytdl(`${args[1]}`)) // Player variable.
         .on("end", () => {
 
             console.log("Song ended!");
