@@ -9,6 +9,9 @@ const ytdl = require("ytdl-core");
 // DEFINE THE PREFIX
 const prefix = ".";
 
+// CREATE QUEUE
+const queue = new Map();
+
 // CREATE THE SPAM COLLECTIONS
 const talkedRecently = new Set();
 const talkedRecently1 = new Set(); 
