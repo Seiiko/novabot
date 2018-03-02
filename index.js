@@ -246,13 +246,6 @@ client.on("message", async message => {
 
    // Define the server queue and the song variables for the music bot.
    let serverQueue = queue.get(message.guild.id);
-   const songInfo = await ytdl.getInfo(args[0]);
-   const song = {
-
-    title: mPlay.songInfo.title,
-    url: mPlay.songInfo.video_url
-
-   };
 
    // Define the VC variable.
    let voiceChannel = message.member.voiceChannel; // Voice channel variable.
@@ -263,6 +256,66 @@ client.on("message", async message => {
    // Check if the command exists.
    if (cmd)
     cmd.run(client, message, args);
+
+  if (cmd === "play") {
+
+    // CHECK CONDITIONS
+    if(!voiceChannel) // Check if the member is connected to a voice channel.
+        return message.channel.send(":sound:  |  You need to be in a Voice Channel to play music!");
+
+    const songInfo = await ytdl.getInfo(args[0]);
+    const song = {
+     
+      title: mPlay.songInfo.title,
+      url: mPlay.songInfo.video_url
+     
+    };
+
+    // PLAY THE SONG
+    if(!serverQueue) { // Create queue if there's none.
+
+        const queueConstruct = {
+
+            textChannel: message.channel,
+            voiceChannel: voiceChannel,
+            connection: null,
+            songs: [],
+            volume: 5,
+            playing: true
+
+        };
+
+        queue.set(message.guild.id, queueConstruct);
+
+        queueConstruct.songs.push(song);
+
+        // Join the voice channel.
+        try {
+
+            var connection = await voiceChannel.join(); // Connect the bot to the voice channel.     
+            queueConstruct.connection = connection;
+            
+            play(message.guild, queueConstruct.songs[0]);
+    
+        } catch(error) {
+    
+            console.log(`I could not join the Voice Channel: ${error}.`);
+            queue.delete(message.guild.id);
+            return message.channel.send(`:no_entry_sign:  |  I could not join the Voice Channel: ${error}.`);
+    
+        }
+
+    } else {
+
+        serverQueue.songs.push(song);
+        console.log(serverQueue.songs);
+        return message.channel.send(`:musical_note:  |  **${song.title}** Has been added to the queue!`);
+
+    }
+
+    return undefined;
+
+  }
 
 });
 
