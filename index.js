@@ -5,7 +5,6 @@ const client = new Discord.Client();
 // SETUP THE DEPENDENCIES
 const fs = require("fs");
 const ytdl = require("ytdl-core");
-const mPlay = require("./cmd/music/play")
 
 // DEFINE THE PREFIX
 const prefix = ".";
@@ -18,6 +17,9 @@ const talkedRecently3 = new Set();
 
 // SETUP THE COMMANDS COLLECTION
 client.commands = new Discord.Collection();
+
+// DEFINE THE VARIABLES
+const queue = new Map(); // Queue constant.
 
 // READ THE REGULAR COMMANDS FOLDER
 fs.readdir("./cmd/regular", (err, files) => {
