@@ -2,7 +2,8 @@ const ytdl = require("ytdl-core");
 
 module.exports.run = async (client, message, args) => {
 
-    // Define the VC variable.
+    // DEFINE THE VARIABLES
+    const queue = new Map(); // Queue constant.
     let voiceChannel = message.member.voiceChannel; // Voice channel variable.
 
     // CHECK CONDITIONS
