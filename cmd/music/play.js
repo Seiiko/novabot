@@ -12,6 +12,7 @@ module.exports.run = async (client, message, args) => {
 
     // Define the server queue and the song variables for the music bot.
     let serverQueue = queue.get(message.guild.id);
+    const songInfo = await ytdl.getInfo(args[0]);
     const song = {
 
         title: songInfo.title,
