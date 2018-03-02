@@ -58,7 +58,7 @@ module.exports.run = async (client, message, args) => {
 
         serverQueue.songs.push(song);
         console.log(serverQueue.songs);
-        return message.channel.send(`:musical_note:  |  **${song.title}** Has been added to the queue!`);
+        return  message.channel.send(`:musical_note:  |  **${song.title}** Has been added to the queue!`);
 
     }
 
@@ -72,7 +72,7 @@ module.exports.run = async (client, message, args) => {
         if (!song) {
   
             serverQueue.voiceChannel.leave();
-            queue.delete(guild.id);
+            queue.delete(message.guild.id);
             return;
   
         }
