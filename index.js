@@ -240,7 +240,8 @@ client.on("message", async message => {
    let command = raw[0];
    let args = raw.slice(1);
 
-   let serverQueue = queue.get(message.guild.id);
+   const queue = new Map(); // Queue constant.
+   const serverQueue = queue.get(message.guild.id);
 
    // Define the command variable.
    let cmd = client.commands.get(command.slice(prefix.length));
