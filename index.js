@@ -18,9 +18,6 @@ const talkedRecently3 = new Set();
 // SETUP THE COMMANDS COLLECTION
 client.commands = new Discord.Collection();
 
-// DEFINE THE VARIABLES
-const queue = new Map(); // Queue constant.
-
 // READ THE REGULAR COMMANDS FOLDER
 fs.readdir("./cmd/regular", (err, files) => {
   if(err) console.error(err);
@@ -238,13 +235,12 @@ client.on("message", async message => {
    // Ignore messages without prefix.
    if(message.content.indexOf(prefix) !== 0) return;
 
-   // Queue variable.
-   const serverQueue = queue.get(message.guild.id);
-   
    // Separate the "command" name, and our "arguments" for the command.
    let raw = message.content.split(/ +/g);
    let command = raw[0];
    let args = raw.slice(1);
+
+   let serverQueue = queue.get(message.guild.id);
 
    // Define the command variable.
    let cmd = client.commands.get(command.slice(prefix.length));
