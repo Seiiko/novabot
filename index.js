@@ -246,6 +246,7 @@ client.on("message", async message => {
 
    // Define the server queue and the song variables for the music bot.
    let serverQueue = queue.get(message.guild.id);
+   const songInfo = await ytdl.getInfo(args[0]);
    const song = {
 
     title: mPlay.songInfo.title,

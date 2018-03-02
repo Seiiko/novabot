@@ -1,5 +1,4 @@
 const ytdl = require("ytdl-core");
-const songInfo = await ytdl.getInfo(args[0]);
 
 module.exports.run = async (client, message, args) => {
 
@@ -59,5 +58,3 @@ module.exports.info = {
     name: "play"
 
 }
-
-module.exports.songInfo = songInfo;
