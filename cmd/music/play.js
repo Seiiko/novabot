@@ -45,6 +45,7 @@ module.exports.run = async (client, message, args) => {
             queueConstruct.connection = connection;
             
             play(message.guild, queueConstruct.songs[0]);
+            return;
     
         } catch(error) {
     
@@ -75,7 +76,7 @@ module.exports.run = async (client, message, args) => {
             queue.delete(message.guild.id);
             return;
   
-        }
+        }   
   
         console.log(serverQueue.songs);
   
