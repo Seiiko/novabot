@@ -50,7 +50,7 @@ module.exports.run = async (client, message, args) => {
     
             console.log(`I could not join the Voice Channel: ${error}.`);
             queue.delete(message.guild.id);
-            return message.channel.send(`:no_entry_sign:  |  I could not join the Voice Channel: ${error}.`);
+            return message.channel.send(`:no_entry_sign:  |  I could not join the Voice Channel. ${error}.`);
     
         }
 

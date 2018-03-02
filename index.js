@@ -235,6 +235,9 @@ client.on("message", async message => {
   
    // Ignore messages without prefix.
    if(message.content.indexOf(prefix) !== 0) return;
+
+   // Queue variable.
+   const serverQueue = queue.get(message.guild.id);
    
    // Separate the "command" name, and our "arguments" for the command.
    let raw = message.content.split(/ +/g);
