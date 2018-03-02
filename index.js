@@ -10,9 +10,6 @@ const mPlay = require("./cmd/music/play")
 // DEFINE THE PREFIX
 const prefix = ".";
 
-// CREATE QUEUE
-const queue = new Map();
-
 // CREATE THE SPAM COLLECTIONS
 const talkedRecently = new Set();
 const talkedRecently1 = new Set(); 
@@ -243,9 +240,6 @@ client.on("message", async message => {
    let raw = message.content.split(/ +/g);
    let command = raw[0];
    let args = raw.slice(1);
-
-   // Define the VC variable.
-   let voiceChannel = message.member.voiceChannel; // Voice channel variable.
 
    // Define the command variable.
    let cmd = client.commands.get(command.slice(prefix.length));
