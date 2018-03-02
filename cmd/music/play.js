@@ -4,14 +4,14 @@ module.exports.run = async (client, message, args) => {
 
     // DEFINE THE VARIABLES
     const queue = new Map(); // Queue constant.
-    let voiceChannel = message.member.voiceChannel; // Voice channel variable.
+    const voiceChannel = message.member.voiceChannel; // Voice channel variable.
 
     // CHECK CONDITIONS
     if(!voiceChannel) // Check if the member is connected to a voice channel.
         return message.channel.send(":sound:  |  You need to be in a Voice Channel to play music!");
 
     // Define the server queue and the song variables for the music bot.
-    let serverQueue = queue.get(message.guild.id);
+    const serverQueue = queue.get(message.guild.id);
     const songInfo = await ytdl.getInfo(args[0]);
     const song = {
 
