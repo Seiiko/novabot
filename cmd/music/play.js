@@ -2,6 +2,9 @@ const ytdl = require("ytdl-core");
 
 module.exports.run = async (client, message, args) => {
 
+    // Define the VC variable.
+    let voiceChannel = message.member.voiceChannel; // Voice channel variable.
+
     // CHECK CONDITIONS
     if(!voiceChannel) // Check if the member is connected to a voice channel.
         return message.channel.send(":sound:  |  You need to be in a Voice Channel to play music!");
