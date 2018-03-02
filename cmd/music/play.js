@@ -11,6 +11,7 @@ module.exports.run = async (client, message, args) => {
         return message.channel.send(":sound:  |  You need to be in a Voice Channel to play music!");
 
     // Define the server queue and the song variables for the music bot.
+    const serverQueue = queue.get(message.guild.id);
     const songInfo = await ytdl.getInfo(args[0]);
     const song = {
 
