@@ -4,6 +4,7 @@ module.exports.run = async (client, message, args) => {
 
     // DEFINE THE VARIABLES
     const queue = new Map(); // Queue constant.
+    const serverQueue = queue.get(message.guild.id);
     const voiceChannel = message.member.voiceChannel; // Voice channel variable.
 
     // CHECK CONDITIONS
@@ -65,6 +66,8 @@ module.exports.run = async (client, message, args) => {
 
     // Play function.
     function play(guild, song) {
+
+        const serverQueue = queue.get(message.guild.id);
   
         if (!song) {
   
