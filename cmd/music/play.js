@@ -14,8 +14,8 @@ module.exports.run = async (client, message, args) => {
     let serverQueue = queue.get(message.guild.id);
     const song = {
 
-        title: mPlay.songInfo.title,
-        url: mPlay.songInfo.video_url
+        title: songInfo.title,
+        url: songInfo.video_url
 
     };
 
