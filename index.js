@@ -159,7 +159,7 @@ fs.readdir("./cmd/interaction", (err, files) => {
 
 const music = new Music(client, {
   youtubeKey: 'AIzaSyCom6F7OFxjJYHDNv6w_3Y2fP3CrTan9JU'
-  botPrefix: '.'
+  prefix: '.'
   helpCmd: 'mhelp'
 });
 
