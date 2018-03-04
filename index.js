@@ -158,9 +158,16 @@ fs.readdir("./cmd/interaction", (err, files) => {
 });
 
 const music = new Music(client, {
+  
   youtubeKey: 'AIzaSyCom6F7OFxjJYHDNv6w_3Y2fP3CrTan9JU',
-  botPrefix: '.',
-  helpCmd: 'mhelp'
+  prefix: '.',
+  helpCmd: 'mhelp',
+  messageHelp: true,
+  botOwner: '380484645281595392',
+  ownerOverMember: true,
+  enableQueueStat: true,
+  logging: true
+
 });
 
 // SET BOT STATUS
