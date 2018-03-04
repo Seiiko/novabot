@@ -5,6 +5,7 @@ const client = new Discord.Client();
 // SETUP THE DEPENDENCIES
 const fs = require("fs");
 const ytdl = require("ytdl-core");
+const Music = require('discord.js-musicbot-addon');
 
 // DEFINE THE PREFIX
 const prefix = ".";
@@ -156,27 +157,10 @@ fs.readdir("./cmd/interaction", (err, files) => {
 
 });
 
-// READ THE MUSIC COMMANDS FOLDER
-fs.readdir("./cmd/music", (err, files) => {
-  if(err) console.error(err);
-
-  // Filter .js files.
-  let jsFiles = files.filter( f => f.split(".").pop() === "js");
-  if(jsFiles.length <= 0) {
-    console.log("No commands to load.");
-    return;
-  }
-
-  // Load the commands
-  console.log(`Loading ${jsFiles.length} music commands.`);
-  jsFiles.forEach((f, i) => {
-
-    let props = require(`./cmd/music/${f}`);
-    console.log(`${i + 1}: ${f} loaded.`);
-    client.commands.set(props.info.name, props);
-
-  });
-
+const music = new Music(client, {
+  youtubeKey: 'AIzaSyCom6F7OFxjJYHDNv6w_3Y2fP3CrTan9JU'
+  botPrefix: '.'
+  helpCmd: 'mhelp'
 });
 
 // SET BOT STATUS
