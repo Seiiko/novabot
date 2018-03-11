@@ -69,16 +69,21 @@ module.exports.run = async (client, message, args) => {
 
         const helpCommand = new Discord.RichEmbed()
   
-            .setTitle('The ' + cname + 'command.')
             .setAuthor("Nova   |   Help", "https://cdn.discordapp.com/attachments/419222687525896202/422352880985440257/luminus_bot_stars.png")
     
             .setColor("#7d4586")
-            .setDescription(cdesc)
     
             .setFooter("Nova, the universal magic bot. Made by Sei.", "https://cdn.discordapp.com/attachments/419222687525896202/422352880985440257/luminus_bot_stars.png")
     
+            .addField('The ' + cname + ' command.',
+            cdesc)
+
+            .addBlankField(true)
+
             .addField("Usage",
-            "COMING SOON")    
+            "COMING SOON")
+            
+            .addBlankField(true)
   
         message.member.send(helpCommand);
   
