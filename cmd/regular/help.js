@@ -3,6 +3,9 @@ const name = require('./info/name')
 
 module.exports.run = async (client, message, args) => {
 
+    let raw = message.content.split(/ +/g);
+    let args = raw.slice(1);
+
     // General help command, no command specified.
     if (!args) {
 
@@ -60,7 +63,7 @@ module.exports.run = async (client, message, args) => {
 
     } else {
   
-        message.channel.send('The ' + name.args + ' command.');
+        message.channel.send('The ' + name.args[0] + ' command.');
   
     }
 
