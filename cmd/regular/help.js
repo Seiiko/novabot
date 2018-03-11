@@ -62,7 +62,7 @@ module.exports.run = async (client, message, args) => {
 
         let typed = args[0];
   
-        message.channel.send('The ' + name.typed + ' command.');
+        message.channel.send('The ' + name.command[args[0]] + ' command.');
   
     }
 

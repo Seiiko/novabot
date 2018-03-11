@@ -1,6 +1,10 @@
-module.exports.ban = ".ban"
-module.exports.kick = ".kick"
-module.exports.mute = ".mute"
-module.exports.purge = ".purge"
-module.exports.say = ".say"
-module.exports.unmute = ".unmute"
+module.exports.command = {
+    
+    ban: ".ban",
+    kick: ".kick",
+    mute: ".mute",
+    purge: ".purge",
+    say: ".say",
+    unmute: ".unmute"
+
+}
