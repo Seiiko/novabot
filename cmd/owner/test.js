@@ -20,21 +20,33 @@ module.exports.run = async (client, message, args) => {
       .setFooter('Nova, the universal magic bot. Made by Sei.', 'https://cdn.discordapp.com/attachments/394292753330339840/408696752489627668/luminus_bot_icon.png')
   
       .setURL('https://www.youtube.com/c/seiitunes')
+
+      .addBlankField(true)
   
       .addField('Regular Commands',
       '.avatar  |  .help  |  .info  |  .ping  |  .report')
+
+      .addBlankField(true)
   
       .addField('Fun Commands',
       '.8ball  |  .catfact  |  .coinflip  |  .dieroll  |  .dogfact  |  .repeat  |  .motiv  |  .potato  |  .puppy  |  .rate')
+
+      .addBlankField(true)
   
       .addField('Interaction Commands',
       '.barf  |  .cuddle  |  .handhold  |  .hug  |  .kiss  |  .noticeme  |  .pat  |  .poke  |  .pout  |  .punch  |  .shrug  |  .slap  |  .tickle')
+
+      .addBlankField(true)
   
       .addField('NSFW Commands',
       '.boobs  |  .butt  |  .e621  |  .gelbooru  |  .hentai  |  .konachan  |  .rule34  |  .vagina')
+
+      .addBlankField(true)
   
       .addField('Admin Commands',
       '.ban  |  .kick  |  .mute  |  .purge  |  .say  |  .unmute')
+
+      .addBlankField(true)
       
       .addField('Bot Owner Commands',
       '.navatar  |  .nick  |  .status  |  .utag')
