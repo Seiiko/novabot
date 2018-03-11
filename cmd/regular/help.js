@@ -74,6 +74,8 @@ module.exports.run = async (client, message, args) => {
             .setColor("#7d4586")
     
             .setFooter("Nova, the universal magic bot. Made by Sei.", "https://cdn.discordapp.com/attachments/419222687525896202/422352880985440257/luminus_bot_stars.png")
+
+            .addBlankField(true)
     
             .addField('The ' + cname + ' command.',
             cdesc)
