@@ -76,8 +76,6 @@ module.exports.run = async (client, message, args) => {
             .setColor("#7d4586")
     
             .setFooter("Nova, the universal magic bot. Made by Sei.", "https://cdn.discordapp.com/attachments/419222687525896202/422352880985440257/luminus_bot_stars.png")
-
-            .addBlankField(true)
     
             .addField('The ' + cName + ' command.',
             cDesc)
@@ -85,9 +83,7 @@ module.exports.run = async (client, message, args) => {
             .addBlankField(true)
 
             .addField("Usage",
-            cUsage)
-            
-            .addBlankField(true)
+            cUsage)  
   
         message.member.send(helpCommand);
         message.channel.send(":white_check_mark:  |  A DM has been sent to you with all the help necessary on the specified command!");
