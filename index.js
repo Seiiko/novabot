@@ -185,33 +185,52 @@ client.on("guildMemberAdd", member => { // Listener event: user joining the serv
   const welcomeChannel = client.channels.find("name", "welcome") // Create a variable referring to the selected channel.
   const embedCommands = new Discord.RichEmbed() // Create a constant referring to the embed message.
 
-    .setTitle("Check out Sei's YouTube channel.")
-    .setAuthor("Nova   |   Help", "https://cdn.discordapp.com/attachments/394292753330339840/408696752489627668/luminus_bot_icon.png")
+    .setTitle('Check out Sei\'s YouTube channel.')
+    .setAuthor('Nova   |   Help', 'https://cdn.discordapp.com/attachments/419222687525896202/422352880985440257/luminus_bot_stars.png')
+  
+    .setColor('#7d4586')
+    .setDescription('For help with a specific command, type \'.help [command]\'.')
+  
+    .setFooter('Nova, the universal magic bot. Made by Sei.', 'https://cdn.discordapp.com/attachments/419222687525896202/422352880985440257/luminus_bot_stars.png')
+  
+    .setURL('https://www.youtube.com/c/seiitunes')
 
-    .setColor("#95dbdb")
-    .setDescription("For help with a specific command, type \".help [command]\".")
+    .addBlankField(true)
+  
+    .addField('Regular Commands',
+    '.avatar   |   .help   |   .info   |   .ping   |   .report')
 
-    .setFooter("Nova, the universal magic bot. Made by Sei.", "https://cdn.discordapp.com/attachments/394292753330339840/408696752489627668/luminus_bot_icon.png")
+    .addBlankField(true)
+  
+    .addField('Fun Commands',
+    '.8ball   |   .catfact  |   .coinflip   |   .dieroll   |   .dogfact  |   .repeat   |   .motiv   |   .potato   |   .puppy   |   .rate')
 
-    .setURL("https://www.youtube.com/c/seiitunes")
+    .addBlankField(true)
+  
+    .addField('Interaction Commands',
+    '.barf   |   .cuddle   |   .handhold   |   .hug   |   .kiss   |   .noticeme   |   .pat   |   .poke   |   .pout   |   .punch   |   .shrug   |   .slap   |   .tickle')
 
-    .addField("Regular Commands",
-    ".avatar  |  .help  |  .info  |  .ping  |  .report")
+    .addBlankField(true)
 
-    .addField("Fun Commands",
-    ".8ball  |  .catfact  |  .coinflip  |  .dieroll  |  .dogfact  |  .repeat  |  .motiv  |  .potato  |  .puppy  |  .rate")
+    .addField('Music Commands',
+    '.play   |   .stop   |   .pause   |   .resume   |   .skip   |   .volume   |   .queue   |   .clearqueue')
 
-    .addField("Interaction Commands",
-    ".barf  |  .cuddle  |  .handhold  |  .hug  |  .kiss  |  .noticeme  |  .pat  |  .poke  |  .pout  |  .punch  |  .shrug  |  .slap  |  .tickle")
+    .addBlankField(true)
+  
+    .addField('NSFW Commands',
+    '.boobs   |   .butt   |   .e621   |   .gelbooru   |   .hentai   |   .konachan   |   .rule34   |   .vagina')
 
-    .addField("NSFW Commands",
-    ".boobs  |  .butt  |  .e621  |  .gelbooru  |  .hentai  |  .konachan  |  .rule34  |  .vagina")
+    .addBlankField(true)
+  
+    .addField('Admin Commands',
+    '.ban   |   .kick   |   .mute   |   .purge   |   .say   |   .unmute')
 
-    .addField("Admin Commands",
-    ".ban  |  .kick  |  .mute  |  .purge  |  .say  |  .unmute")
-    
-    .addField("Bot Owner Commands",
-    ".navatar  |  .nick  |  .status  |  .utag")
+    .addBlankField(true)
+      
+    .addField('Bot Owner Commands',
+    '.bavatar   |   .nick   |   .status   |   .utag')
+
+    .addBlankField(true)
 
   // Sending the messages.
   welcomeChannel.send("<@!"+member.user.id+"> || **Welcome to Luminus!** \nBe sure to introduce yourself, before the fun starts. We're happy to have you here, and we hope you have a nice time here.");
