@@ -57,7 +57,7 @@ module.exports.run = async (client, message, args) => {
         message.member.send(embedHelp);
         message.channel.send(":white_check_mark:  |  A DM has been sent to you with all the help necessary!");
   
-    } else if (args[0] !== cmd) {
+    } else if (args[0] !== helpcmd) {
 
         message.channel.send('That is not a valid command!');
 

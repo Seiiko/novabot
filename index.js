@@ -259,6 +259,7 @@ client.on("message", async message => {
 
    // Define the command variable.
    global.cmd = client.commands.get(command.slice(prefix.length));
+   global.helpcmd = client.commands.get(command.slice(prefix.length + cmd.length + ' '));
 
    // Check if the command exists.
    if (cmd)
