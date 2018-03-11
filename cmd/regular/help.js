@@ -1,5 +1,5 @@
 const Discord = require('discord.js');
-const base = require('C:/Users/Rafael/Documents/Discord Bots/novabot/index')
+const base = require('./../../index')
 
 module.exports.run = async (client, message, args) => {
 
@@ -59,11 +59,11 @@ module.exports.run = async (client, message, args) => {
         message.channel.send(":white_check_mark:  |  A DM has been sent to you with all the help necessary!");
         return;
   
-    } 
+    }
     
     // ADMIN COMMANDS HELP
     if (args[0] === base.cmd) {
-    
+
         message.channel.send('A valid command was input!');
 
     } else {

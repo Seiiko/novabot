@@ -260,6 +260,8 @@ client.on("message", async message => {
    // Define the command variable.
    let cmd = client.commands.get(command.slice(prefix.length));
 
+   module.exports.cmd = client.commands.get(command.slice(prefix.length));
+   
    // Check if the command exists.
    if (cmd)
     cmd.run(client, message, args);
