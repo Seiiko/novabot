@@ -3,11 +3,8 @@ const name = require('./info/name')
 
 module.exports.run = async (client, message, args) => {
 
-    let raw = message.content.split(/ +/g);
-    let arguments = raw.slice(1);
-
     // General help command, no command specified.
-    if (!arguments) {
+    if (!args) {
 
         const embedHelp = new Discord.RichEmbed()
   
@@ -62,8 +59,10 @@ module.exports.run = async (client, message, args) => {
         message.channel.send(":white_check_mark:  |  A DM has been sent to you with all the help necessary!");
 
     } else {
+
+        let typed = args[0];
   
-        message.channel.send('The ' + name.`${args[0]}` + ' command.');
+        message.channel.send('The ' + name.typed + ' command.');
   
     }
 
@@ -517,4 +516,8 @@ module.exports.info = {
     // Set the command name.
     name: "help"
 
+}
+
+function newFunction(args) {
+    return `${args[0]}`;
 }
