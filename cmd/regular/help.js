@@ -82,6 +82,8 @@ module.exports.run = async (client, message, args) => {
             .addField('The ' + cName + ' command.',
             cDesc)
 
+            .addBlankField(true)
+
             .addField("Usage",
             cUsage)
             
