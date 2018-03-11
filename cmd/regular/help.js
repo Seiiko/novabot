@@ -1,6 +1,7 @@
 const Discord = require('discord.js');
 const name = require('./info/name')
 const desc = require('./info/description')
+const usage = require('./info/usage')
 
 module.exports.run = async (client, message, args) => {
 
@@ -61,8 +62,9 @@ module.exports.run = async (client, message, args) => {
 
     } else {
 
-        let cname = name.command[args[0]];
-        let cdesc = desc.command[args[0]];
+        let cName = name.command[args[0]];
+        let cDesc = desc.command[args[0]];
+        let cUsage = usage.command[args[0]];
 
         if(cname == null)
             return message.channel.send(':interrobang:  |  Please provide a valid command!\n:interrobang:  |  **Usage:** .help [command]');
@@ -77,17 +79,18 @@ module.exports.run = async (client, message, args) => {
 
             .addBlankField(true)
     
-            .addField('The ' + cname + ' command.',
-            cdesc)
+            .addField('The ' + cName + ' command.',
+            cDesc)
 
             .addBlankField(true)
 
             .addField("Usage",
-            "COMING SOON")
+            cUsage)
             
             .addBlankField(true)
   
         message.member.send(helpCommand);
+        message.channel.send(":white_check_mark:  |  A DM has been sent to you with all the help necessary on the specified command!");
   
     }
     
