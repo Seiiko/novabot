@@ -84,7 +84,7 @@ module.exports.run = async (client, message, args) => {
 
             .addBlankField(true)
 
-            .addField("Usage",
+            .addField("Usage:",
             cUsage)
             
             .addBlankField(true)
