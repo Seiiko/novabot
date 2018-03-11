@@ -60,7 +60,7 @@ module.exports.run = async (client, message, args) => {
 
     } else {
   
-        message.channel.send('The ' + name.args[0] + ' command.');
+        message.channel.send('The ' + name.args + ' command.');
   
     }
 
