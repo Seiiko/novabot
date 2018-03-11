@@ -5,7 +5,7 @@ module.exports.run = async (client, message, args) => {
 
     // Check if the argument is a number.
     if (isNaN(args[1])) {
-      return message.channel.send(":question:  |  That's not a valid number. \n:question:  |  Usage: .emoji [emoji name] [desired number]");
+      return message.channel.send(":question:  |  That's not a valid number. \n:question:  |  Usage: .repeat [message] [desired number]");
 
     }
 
@@ -17,6 +17,6 @@ module.exports.run = async (client, message, args) => {
 module.exports.info = {
 
     // Set the command name.
-    name: "emoji"
+    name: "repeat"
 
 }

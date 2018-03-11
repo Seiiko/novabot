@@ -12,6 +12,6 @@ module.exports.run = async (client, message, args) => {
 module.exports.info = {
 
     // Set the command name.
-    name: "8ball"
+    name: "eball"
 
 }
