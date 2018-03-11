@@ -255,6 +255,7 @@ client.on("message", async message => {
    // Separate the "command" name, and our "arguments" for the command.
    let raw = message.content.split(/ +/g);
    let command = raw[0];
+   let name = raw[0].slice(prefix.length);
    let args = raw.slice(1);
 
    // Define the command variable.
@@ -265,7 +266,7 @@ client.on("message", async message => {
     cmd.run(client, message, args);
 
    // HELP COMMAND
-   if(cmd === 'help') {
+   if(name === 'help') {
 
     // General help command, no command specified.
     if (!args) {
