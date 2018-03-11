@@ -1,5 +1,5 @@
 const Discord = require('discord.js');
-const base = require('C:/Users/Rafael/Documents/Discord Bots/novabot/index.js')
+const base = require('C:/Users/Rafael/Documents/Discord Bots/novabot/index')
 
 module.exports.run = async (client, message, args) => {
 
