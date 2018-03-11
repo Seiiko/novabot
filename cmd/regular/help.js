@@ -60,7 +60,7 @@ module.exports.run = async (client, message, args) => {
 
     } else {
 
-        if(name.commands[args[0]] == undefined)
+        if(name.commands[args[0]] === undefined)
             return message.channel.send(':interrobang:  |  Please provide a valid command!\n:interrobang:  |  **Usage:** .help [command]')
   
         message.channel.send('The ' + name.command[args[0]] + ' command.');
