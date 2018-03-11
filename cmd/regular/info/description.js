@@ -53,6 +53,7 @@ module.exports.command = {
     // Regular commands.
     avatar: "Grabs the avatar picture from another member.",
     help: "Allows you to see a full list of all the bot's commands or get help for a specific command. That's how you got here!",
+    iam: "Gives you a self-assignable role of your choice. The only role available, at the moment, is 'NSFW'.",
     info: "Allows you to check out some information about the bot, including its current version.",
     ping: "Calculates your current ping.",
     report: "Reports another member for misbehavior. Your message will be deleted afterwards, to keep your privacy, and the mods will get an alert of your report.",

@@ -56,6 +56,7 @@ module.exports.command = {
     info: ".info",
     ping: ".ping",
     report: ".report",
+    iam: ".iam",
 
     // Music commands.
     play: ".play",

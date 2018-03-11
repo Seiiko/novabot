@@ -53,6 +53,7 @@ module.exports.command = {
     // Regular commands.
     avatar: ".avatar [member]",
     help: ".help [command]",
+    iam: ".iam [role]",
     info: ".info",
     ping: ".ping",
     report: ".report [member] [reason]",

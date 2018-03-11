@@ -198,12 +198,12 @@ client.on("guildMemberAdd", member => { // Listener event: user joining the serv
     .addBlankField(true)
   
     .addField('Regular Commands',
-    '.avatar   |   .help   |   .info   |   .ping   |   .report')
+    '.avatar   |   .help   |   .iam   |   .info   |   .ping   |   .report')
 
     .addBlankField(true)
   
     .addField('Fun Commands',
-    '.8ball   |   .catfact  |   .coinflip   |   .dieroll   |   .dogfact  |   .repeat   |   .motiv   |   .potato   |   .puppy   |   .rate')
+    '.catfact  |   .coinflip   |   .dieroll   |   .dogfact  |   .eball   |   .repeat   |   .motiv   |   .puppy   |   .rate')
 
     .addBlankField(true)
   
