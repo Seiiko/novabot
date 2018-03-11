@@ -60,7 +60,7 @@ module.exports.run = async (client, message, args) => {
         message.member.send(embedHelp);
         message.channel.send(":white_check_mark:  |  A DM has been sent to you with all the help necessary!");
 
-    } else {
+    } else { // If a command was specified.
 
         let cName = name.command[args[0]];
         let cDesc = desc.command[args[0]];
