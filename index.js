@@ -3,12 +3,12 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 
 // SETUP THE DEPENDENCIES
-const fs = require('fs'); // File system dependency.
-const ytdl = require('ytdl-core'); // YouTube core dependency.
+const fs = require("fs"); // File system dependency.
+const ytdl = require("ytdl-core"); // YouTube core dependency.
 const Music = require('discord.js-musicbot-addon'); // Music bot dependency.
 
 // DEFINE THE PREFIX
-const prefix = '.';
+const prefix = ".";
 
 // CREATE THE SPAM COLLECTIONS
 const talkedRecently = new Set();
@@ -20,13 +20,13 @@ const talkedRecently3 = new Set();
 client.commands = new Discord.Collection();
 
 // READ THE REGULAR COMMANDS FOLDER
-fs.readdir('./cmd/regular', (err, files) => {
+fs.readdir("./cmd/regular", (err, files) => {
   if(err) console.error(err);
 
   // Filter .js files.
-  let jsFiles = files.filter( f => f.split('.').pop() === 'js');
+  let jsFiles = files.filter( f => f.split(".").pop() === "js");
   if(jsFiles.length <= 0) {
-    console.log('No commands to load.');
+    console.log("No commands to load.");
     return;
   }
 
@@ -43,13 +43,13 @@ fs.readdir('./cmd/regular', (err, files) => {
 });
 
 // READ THE ADMIN COMMANDS FOLDER
-fs.readdir('./cmd/admin', (err, files) => {
+fs.readdir("./cmd/admin", (err, files) => {
   if(err) console.error(err);
 
   // Filter .js files.
-  let jsFiles = files.filter( f => f.split('.').pop() === 'js');
+  let jsFiles = files.filter( f => f.split(".").pop() === "js");
   if(jsFiles.length <= 0) {
-    console.log('No commands to load.');
+    console.log("No commands to load.");
     return;
   }
 
@@ -66,13 +66,13 @@ fs.readdir('./cmd/admin', (err, files) => {
 });
 
 // READ THE BOT OWNER COMMANDS FOLDER
-fs.readdir('./cmd/owner', (err, files) => {
+fs.readdir("./cmd/owner", (err, files) => {
   if(err) console.error(err);
 
   // Filter .js files.
-  let jsFiles = files.filter( f => f.split('.').pop() === 'js');
+  let jsFiles = files.filter( f => f.split(".").pop() === "js");
   if(jsFiles.length <= 0) {
-    console.log('No commands to load.');
+    console.log("No commands to load.");
     return;
   }
 
@@ -89,13 +89,13 @@ fs.readdir('./cmd/owner', (err, files) => {
 });
 
 // READ THE FUN COMMANDS FOLDER
-fs.readdir('./cmd/fun', (err, files) => {
+fs.readdir("./cmd/fun", (err, files) => {
   if(err) console.error(err);
 
   // Filter .js files.
-  let jsFiles = files.filter( f => f.split('.').pop() === 'js');
+  let jsFiles = files.filter( f => f.split(".").pop() === "js");
   if(jsFiles.length <= 0) {
-    console.log('No commands to load.');
+    console.log("No commands to load.");
     return;
   }
 
@@ -112,13 +112,13 @@ fs.readdir('./cmd/fun', (err, files) => {
 });
 
 // READ THE NSFW COMMANDS FOLDER
-fs.readdir('./cmd/nsfw', (err, files) => {
+fs.readdir("./cmd/nsfw", (err, files) => {
   if(err) console.error(err);
 
   // Filter .js files.
-  let jsFiles = files.filter( f => f.split('.').pop() === 'js');
+  let jsFiles = files.filter( f => f.split(".").pop() === "js");
   if(jsFiles.length <= 0) {
-    console.log('No commands to load.');
+    console.log("No commands to load.");
     return;
   }
 
@@ -135,13 +135,13 @@ fs.readdir('./cmd/nsfw', (err, files) => {
 });
 
 // READ THE INTERACTION COMMANDS FOLDER
-fs.readdir('./cmd/interaction', (err, files) => {
+fs.readdir("./cmd/interaction", (err, files) => {
   if(err) console.error(err);
 
   // Filter .js files.
-  let jsFiles = files.filter( f => f.split('.').pop() === 'js');
+  let jsFiles = files.filter( f => f.split(".").pop() === "js");
   if(jsFiles.length <= 0) {
-    console.log('No commands to load.');
+    console.log("No commands to load.");
     return;
   }
 
@@ -177,46 +177,46 @@ client.on('ready', () => { // When the bot is ready.
 });
     
 // WELCOME NEW MEMBERS
-client.on('guildMemberAdd', member => { // Listener event: user joining the server.
+client.on("guildMemberAdd", member => { // Listener event: user joining the server.
 
-  let wRole = member.guild.roles.find('name', '★ Casual ★');
+  let wRole = member.guild.roles.find("name", "★ Casual ★");
     
   // Defining the variables.
-  const welcomeChannel = client.channels.find('name', 'welcome') // Create a variable referring to the selected channel.
+  const welcomeChannel = client.channels.find("name", "welcome") // Create a variable referring to the selected channel.
   const embedCommands = new Discord.RichEmbed() // Create a constant referring to the embed message.
 
-    .setTitle('Check out Sei\'s YouTube channel.')
-    .setAuthor('Nova   |   Help', 'https://cdn.discordapp.com/attachments/394292753330339840/408696752489627668/luminus_bot_icon.png')
+    .setTitle("Check out Sei's YouTube channel.")
+    .setAuthor("Nova   |   Help", "https://cdn.discordapp.com/attachments/394292753330339840/408696752489627668/luminus_bot_icon.png")
 
-    .setColor('#95dbdb')
-    .setDescription('For help with a specific command, type \'.help [command]\'.')
+    .setColor("#95dbdb")
+    .setDescription("For help with a specific command, type \".help [command]\".")
 
-    .setFooter('Nova, the universal magic bot. Made by Sei.', 'https://cdn.discordapp.com/attachments/394292753330339840/408696752489627668/luminus_bot_icon.png')
+    .setFooter("Nova, the universal magic bot. Made by Sei.", "https://cdn.discordapp.com/attachments/394292753330339840/408696752489627668/luminus_bot_icon.png")
 
-    .setURL('https://www.youtube.com/c/seiitunes')
+    .setURL("https://www.youtube.com/c/seiitunes")
 
-    .addField('Regular Commands',
-    '.avatar  |  .help  |  .info  |  .ping  |  .report')
+    .addField("Regular Commands",
+    ".avatar  |  .help  |  .info  |  .ping  |  .report")
 
-    .addField('Fun Commands',
-    '.8ball  |  .catfact  |  .coinflip  |  .dieroll  |  .dogfact  |  .repeat  |  .motiv  |  .potato  |  .puppy  |  .rate')
+    .addField("Fun Commands",
+    ".8ball  |  .catfact  |  .coinflip  |  .dieroll  |  .dogfact  |  .repeat  |  .motiv  |  .potato  |  .puppy  |  .rate")
 
-    .addField('Interaction Commands',
-    '.barf  |  .cuddle  |  .handhold  |  .hug  |  .kiss  |  .noticeme  |  .pat  |  .poke  |  .pout  |  .punch  |  .shrug  |  .slap  |  .tickle')
+    .addField("Interaction Commands",
+    ".barf  |  .cuddle  |  .handhold  |  .hug  |  .kiss  |  .noticeme  |  .pat  |  .poke  |  .pout  |  .punch  |  .shrug  |  .slap  |  .tickle")
 
-    .addField('NSFW Commands',
-    '.boobs  |  .butt  |  .e621  |  .gelbooru  |  .hentai  |  .konachan  |  .rule34  |  .vagina')
+    .addField("NSFW Commands",
+    ".boobs  |  .butt  |  .e621  |  .gelbooru  |  .hentai  |  .konachan  |  .rule34  |  .vagina")
 
-    .addField('Admin Commands',
-    '.ban  |  .kick  |  .mute  |  .purge  |  .say  |  .unmute')
+    .addField("Admin Commands",
+    ".ban  |  .kick  |  .mute  |  .purge  |  .say  |  .unmute")
     
-    .addField('Bot Owner Commands',
-    '.navatar  |  .nick  |  .status  |  .utag')
+    .addField("Bot Owner Commands",
+    ".navatar  |  .nick  |  .status  |  .utag")
 
   // Sending the messages.
-  welcomeChannel.send('<@!'+member.user.id+'> || **Welcome to Luminus!** \nBe sure to introduce yourself, before the fun starts. We\'re happy to have you here, and we hope you have a nice time here.');
-  member.send('**Welcome to Luminus!** \nBe sure to introduce yourself, before the fun starts. We\'re happy to have you here, and we hope you have a nice time here.');
-  member.send(':white_check_mark:  |  Here\'s a list of all the commands of the bot! Write ".help [command name]" to get specific help with that command.');
+  welcomeChannel.send("<@!"+member.user.id+"> || **Welcome to Luminus!** \nBe sure to introduce yourself, before the fun starts. We're happy to have you here, and we hope you have a nice time here.");
+  member.send("**Welcome to Luminus!** \nBe sure to introduce yourself, before the fun starts. We're happy to have you here, and we hope you have a nice time here.");
+  member.send(":white_check_mark:  |  Here's a list of all the commands of the bot! Write \".help [command name]\" to get specific help with that command.");
   member.send(embedCommands);
 
   // Giving member role.
@@ -225,7 +225,7 @@ client.on('guildMemberAdd', member => { // Listener event: user joining the serv
 });
 
 // COMMAND HANDLER
-client.on('message', async message => {
+client.on("message", async message => {
 
    // Ignore other bots, including itself.
    if(message.author.bot) return;
@@ -233,7 +233,7 @@ client.on('message', async message => {
    // Ignore messages without prefix.
    if(message.content.indexOf(prefix) !== 0) return;
 
-   // Separate the 'command' name, and our 'arguments' for the command.
+   // Separate the "command" name, and our "arguments" for the command.
    let raw = message.content.split(/ +/g);
    let command = raw[0];
    let args = raw.slice(1);
@@ -248,7 +248,7 @@ client.on('message', async message => {
 });
 
 // SPAM PREVENTION
-client.on('message', async message => {
+client.on("message", async message => {
 
   // Ignore other bots, including itself.
   if(message.author.bot) return;
@@ -275,12 +275,12 @@ client.on('message', async message => {
  } else if (talkedRecently3.has(message.author.id)) {
 
    talkedRecently2.delete(message.author.id);
-   message.channel.send(':no_mouth:  |  Whoa there, cowboy. Slow down! You can type again in 5 seconds.');
-   message.member.addRole(message.guild.roles.find('name', '★ Muted ★'));
+   message.channel.send(":no_mouth:  |  Whoa there, cowboy. Slow down! You can type again in 5 seconds.");
+   message.member.addRole(message.guild.roles.find("name", "★ Muted ★"));
 
    function callback(){
     return function(){
-      message.member.removeRole(message.guild.roles.find('name', '★ Muted ★'));
+      message.member.removeRole(message.guild.roles.find("name", "★ Muted ★"));
       }
    }
 
