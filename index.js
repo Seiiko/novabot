@@ -265,7 +265,7 @@ client.on("message", async message => {
     cmd.run(client, message, args);
 
    // HELP COMMAND
-   if(command === 'help') {
+   if(cmd === 'help') {
 
     // General help command, no command specified.
     if (!args) {
