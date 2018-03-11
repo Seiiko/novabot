@@ -4,7 +4,7 @@ const name = require('./info/name')
 module.exports.run = async (client, message, args) => {
 
     // General help command, no command specified.
-    if (!args) {
+    if (!args[0]) {
 
         const embedHelp = new Discord.RichEmbed()
   
