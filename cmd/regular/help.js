@@ -1,5 +1,4 @@
 const Discord = require('discord.js');
-const base = require('./../../index')
 
 module.exports.run = async (client, message, args) => {
 
@@ -58,7 +57,7 @@ module.exports.run = async (client, message, args) => {
         message.member.send(embedHelp);
         message.channel.send(":white_check_mark:  |  A DM has been sent to you with all the help necessary!");
   
-    } else if (args[0] !== base.cmd) {
+    } else if (args[0] !== cmd) {
 
         message.channel.send('That is not a valid command!');
 

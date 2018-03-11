@@ -258,10 +258,8 @@ client.on("message", async message => {
    let args = raw.slice(1);
 
    // Define the command variable.
-   let cmd = client.commands.get(command.slice(prefix.length));
+   global.cmd = client.commands.get(command.slice(prefix.length));
 
-   module.exports.cmd = client.commands.get(command.slice(prefix.length));
-   
    // Check if the command exists.
    if (cmd)
     cmd.run(client, message, args);
