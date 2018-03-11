@@ -55,6 +55,16 @@ module.exports.command = {
     help: "Allows you to see a full list of all the bot's commands or get help for a specific command. That's how you got here!",
     info: "Allows you to check out some information about the bot, including its current version.",
     ping: "Calculates your current ping.",
-    report: "Reports another member for misbehavior. Your message will be deleted afterwards, to keep your privacy, and the mods will get an alert of your report."
+    report: "Reports another member for misbehavior. Your message will be deleted afterwards, to keep your privacy, and the mods will get an alert of your report.",
+
+    // Music commands.
+    play: "Adds a song from YouTube to the queue. Include search terms to search for song, or its link for it to be directly added.",
+    stop: "Stops the current queue and makes Nova leave the voice channel.",
+    pause: "Pauses the current queue. Use .resume to continue the playback.",
+    resume: "Resumes the queue if paused.",
+    skip: "Skips a set number of songs. Specify no number to skip one song only. Will have the same effect as .stop if all the songs in the queue are skipped.",
+    volume: "Controls the volume of the current song.",
+    queue: "Views all the songs in the current queue.",
+    clearqueue: "Clears the current queue, deleting all its songs."
 
 }

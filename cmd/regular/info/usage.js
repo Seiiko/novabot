@@ -55,6 +55,16 @@ module.exports.command = {
     help: ".help [command]",
     info: ".info",
     ping: ".ping",
-    report: ".report [member] [reason]"
+    report: ".report [member] [reason]",
+
+    // Music commands.
+    play: ".play [keywords or link]",
+    stop: ".stop",
+    pause: ".pause",
+    resume: ".resume",
+    skip: ".skip [number to skip]",
+    volume: ".volume [desired volume]",
+    queue: ".queue",
+    clearqueue: ".clearqueue"
 
 }
