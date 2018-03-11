@@ -14,14 +14,12 @@ module.exports.run = async (client, message, args) => {
       .setTitle('Check out Sei\'s YouTube channel.')
       .setAuthor('Nova   |   Help', 'https://cdn.discordapp.com/attachments/394292753330339840/408696752489627668/luminus_bot_icon.png')
   
-      .setColor('#95dbdb')
+      .setColor('#8462b2')
       .setDescription('For help with a specific command, type \'.help [command]\'.')
   
       .setFooter('Nova, the universal magic bot. Made by Sei.', 'https://cdn.discordapp.com/attachments/394292753330339840/408696752489627668/luminus_bot_icon.png')
   
       .setURL('https://www.youtube.com/c/seiitunes')
-
-      .addBlankField(true)
   
       .addField('Regular Commands',
       '.avatar  |  .help  |  .info  |  .ping  |  .report')
