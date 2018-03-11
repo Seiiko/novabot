@@ -66,7 +66,7 @@ module.exports.run = async (client, message, args) => {
         let cDesc = desc.command[args[0]];
         let cUsage = usage.command[args[0]];
 
-        if(cname == null)
+        if(cName == null)
             return message.channel.send(':interrobang:  |  Please provide a valid command!\n:interrobang:  |  **Usage:** .help [command]');
 
         const helpCommand = new Discord.RichEmbed()
